@@ -114,7 +114,7 @@ const App = () => {
         <NavBar />
 
           <Routes>
-            <Route path = "/" exact element={
+            <Route path = "/p01-react-movie-app" exact element={
             <div>
                 <Container style ={{marginTop:"20px"}}>
                   <Row>
