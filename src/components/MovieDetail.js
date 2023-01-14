@@ -20,7 +20,7 @@ const movieData = location.state;
                 <Card.Body>
                     <Card.Text style={{fontSize:"35px", fontWeight:"bold"}}>{movieData.title}</Card.Text>
                     <Card.Text>{movieData.overview}</Card.Text>
-                    <Card.Text>Average User Score: {movieData.vote_average}</Card.Text>
+                    <Card.Text>Average User Score: {movieData.vote_average *10}%</Card.Text>
                     <Card.Text>Release Date: {movieData.release_date}</Card.Text>
                     {/* conditionals to set the appropriate "favourite component" based on whether the 
                     current movie being mapped out exists in the props' favouriteList */}

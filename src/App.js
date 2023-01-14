@@ -24,8 +24,8 @@ const App = () => {
     fetch(API_URL_NOWPLAYING)
     .then ((res)=>res.json())
     .then(data=>{
-      data.results.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
-      setMoviesList(data.results.slice(0,12))
+      const sortedData = data.results.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
+      setMoviesList(sortedData.slice(0,12))
     })
   }, [])
 
@@ -44,8 +44,8 @@ const App = () => {
     fetch(API_URL_NOWPLAYING)
     .then ((res)=>res.json())
     .then(data=>{
-      data.results.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
-      setMoviesList(data.results.slice(0,12))
+      const sortedData = data.results.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
+      setMoviesList(sortedData.slice(0,12))
     }))
   
 
@@ -54,7 +54,7 @@ const App = () => {
     .then ((res)=>res.json())
     .then(data=>{
       data.results.sort((a,b) => parseFloat(b.vote_average) - parseFloat(a.vote_average))
-      setMoviesList(data.results.slice(0,12))
+      setMoviesList(data.results.sort((a,b) => parseFloat(b.vote_average) - parseFloat(a.vote_average)))
     }))
 
   const fetchNowPlaying = () =>  ( 
@@ -62,14 +62,14 @@ const App = () => {
     .then ((res)=>res.json())
     .then(data=>{
       //function to reassemble the date attribute into a string value that can be compared and sorted (ie, change 2022-07-08 into 20220708)
-      data.results.sort(function (a,b) {
-        var A = a.release_date.split("-");
-        var B = b.release_date.split("-");
-        var strA = [A[0], A[1], A[2]].join("-");
-        var strB = [B[0], B[1], B[2]].join("-");
-        return strB.localeCompare(strA);
-      });
-      setMoviesList(data.results.slice(0,12))
+      const sortedData = data.results.sort(function (a,b) {
+                                            var A = a.release_date.split("-");
+                                            var B = b.release_date.split("-");
+                                            var strA = [A[0], A[1], A[2]].join("-");
+                                            var strB = [B[0], B[1], B[2]].join("-");
+                                            return strB.localeCompare(strA);
+                                          })
+      setMoviesList(sortedData.slice(0,12))
     }))
 
   const fetchComingSoon = () => ( 
@@ -77,14 +77,14 @@ const App = () => {
     .then ((res)=>res.json())
     .then(data=>{
       //function to reassemble the date attribute into a string value that can be compared and sorted (ie, change 2022-07-08 into 20220708)
-      data.results.sort(function (a,b) {
+      const sortedData = data.results.sort(function (a,b) {
         var A = a.release_date.split("-");
         var B = b.release_date.split("-");
         var strA = [A[0], A[1], A[2]].join("-");
         var strB = [B[0], B[1], B[2]].join("-");
         return strA.localeCompare(strB);
       });
-      setMoviesList(data.results.slice(0,12))
+      setMoviesList(sortedData.slice(0,12))
     }))
 
 	const saveToLocalStorage = (items) => {
@@ -112,7 +112,6 @@ const App = () => {
     <Router>
       <div className='app'>
         <NavBar />
-
           <Routes>
             <Route path = "/react-p01-movie-app" exact element={
             <div>

@@ -21,7 +21,7 @@ const MovieFrame = (props) => {
                             <Card.Text style={{fontSize:"35px", fontWeight:"bold"}}>{movie.title}</Card.Text>
                             {/* Ternary operator to check if overview exists - if not, state no summary available */}
                             <Card.Text>{movie.overview ? (movie.overview.substring(0,200) + "...") : "No Summary Available"}</Card.Text>
-                            <Card.Text>Average User Score: {movie.vote_average}</Card.Text>
+                            <Card.Text>Average User Score: {movie.vote_average * 10}%</Card.Text>
                             <Card.Text>Release Date: {movie.release_date}</Card.Text>
                             <Link to={`/movie/${movie.id}`} state = {movie}>Click here for more details</Link>
                         </Card.Body>
