@@ -17,7 +17,7 @@ const MovieFrame = (props) => {
                 <Col key={key}>
                     <Card className="flex-fill"  style={{height:"100%"}}>
                         <Card.Img  src = {movie.poster_path ? (API_URL_IMG+movie.poster_path) : NoImageIcon} />
-                        <Card.Body>
+                        <Card.Body style={{ backgroundColor: '#333333' }}> {/* Dark grey color */}
                             <Card.Text style={{fontSize:"35px", fontWeight:"bold"}}>{movie.title}</Card.Text>
                             {/* Ternary operator to check if overview exists - if not, state no summary available */}
                             <Card.Text>{movie.overview ? (movie.overview.substring(0,200) + "...") : "No Summary Available"}</Card.Text>

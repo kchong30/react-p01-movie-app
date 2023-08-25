@@ -117,10 +117,10 @@ const App = () => {
             <div>
                 <Container style ={{marginTop:"20px"}}>
                   <Row>
-                    <button onClick = {fetchPopular}>Show Me What's Popular (Most Popular Movies In Theatres)</button>
-                    <button onClick = {fetchHighRated}>Show Me The Best Movies (Highest Rated Movies In Theatres)</button>
-                    <button onClick = {fetchNowPlaying}>Show Me What's New (Recent Releases)</button>
-                    <button onClick = {fetchComingSoon}>Show Me What's Coming Soon (Coming to Theatres)</button>
+                  <button style={{ backgroundColor: 'gray' }} onClick = {fetchPopular}>Show Me What's Popular (Most Popular Movies In Theatres)</button>
+                    <button style={{ backgroundColor: 'gray' }} onClick = {fetchHighRated}>Show Me The Best Movies (Highest Rated Movies In Theatres)</button>
+                    <button style={{ backgroundColor: 'gray' }} onClick = {fetchNowPlaying}>Show Me What's New (Recent Releases)</button>
+                    <button style={{ backgroundColor: 'gray' }} onClick = {fetchComingSoon}>Show Me What's Coming Soon (Coming to Theatres)</button>
                   </Row>
                 </Container>
               <Container fluid style={{margin:"20px", marginLeft:"-5px", backgroundColor:" #050505"}}>

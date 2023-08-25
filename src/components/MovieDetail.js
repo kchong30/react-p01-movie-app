@@ -17,7 +17,7 @@ const movieData = location.state;
     return (
             <Card style={{width:"46%"}}>
                 <Card.Img src = {movieData.poster_path ? (API_URL_IMG+movieData.poster_path) : NoImageIcon} />
-                <Card.Body>
+                <Card.Body style={{ backgroundColor: '#333333' }}> {/* Dark grey color */}
                     <Card.Text style={{fontSize:"35px", fontWeight:"bold"}}>{movieData.title}</Card.Text>
                     <Card.Text>{movieData.overview}</Card.Text>
                     <Card.Text>Average User Score: {movieData.vote_average *10}%</Card.Text>

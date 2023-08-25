@@ -30,7 +30,7 @@ const Favourites = (props) => {
             <Col key={key}>
                 <Card className="flex-fill" key={key}  style={{height:"100%"}}>
                     <Card.Img   src = {movie.poster_path ? (API_URL_IMG+movie.poster_path) : NoImageIcon} />
-                    <Card.Body>
+                    <Card.Body style={{ backgroundColor: '#333333' }}> {/* Dark grey color */}
                         <Card.Text style={{fontSize:"20px"}}>{movie.title}</Card.Text>
                         <Card.Text>{movie.overview.substring(0,200)}...</Card.Text>
                         <Card.Text>Average User Score: {movie.vote_average}</Card.Text>
